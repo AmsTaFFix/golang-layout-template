@@ -28,9 +28,9 @@ func NewUserRepository(storage UserStorage) *UserRepository {
 	return &UserRepository{storage: storage}
 }
 
-func (pr *UserRepository) Get(ctx context.Context, userId UserId) (User, error) {
+func (ur *UserRepository) Get(ctx context.Context, userId UserId) (User, error) {
 	// add some rules, additional business logic, etc.
-	user, err := pr.storage.Get(ctx, userId)
+	user, err := ur.storage.Get(ctx, userId)
 	if err != nil {
 		return User{}, fmt.Errorf("can't get user from storage with id '%s': %w", userId, err)
 	}
@@ -38,12 +38,12 @@ func (pr *UserRepository) Get(ctx context.Context, userId UserId) (User, error) 
 	return user, nil
 }
 
-func (pr *UserRepository) Create(ctx context.Context, userId UserId, name string, managerId ManagerId) (User, error) {
+func (ur *UserRepository) Create(ctx context.Context, userId UserId, name string, managerId ManagerId) (User, error) {
 	// add some rules, additional business logic, etc.
 	_ = managerId // add some audit?
 
 	user := User{Id: userId, FirstName: name}
-	err := pr.storage.Set(ctx, user)
+	err := ur.storage.Set(ctx, user)
 	if err != nil {
 		return User{}, fmt.Errorf("can't create user in storage")
 	}
