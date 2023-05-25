@@ -8,13 +8,13 @@ import (
 )
 
 type UserRepository interface {
-	Get(ctx context.Context, userId internal.UserId) (internal.User, error)
-	Create(ctx context.Context, userId internal.UserId, name string, managerId internal.ManagerId) (internal.User, error)
+	Get(ctx context.Context, userID internal.UserID) (internal.User, error)
+	Create(ctx context.Context, userID internal.UserID, name string, managerID internal.ManagerID) (internal.User, error)
 }
 
 type ProductRepository interface {
-	Get(ctx context.Context, productId internal.ProductId) (internal.Product, error)
-	Create(ctx context.Context, productId internal.ProductId, name string, managerId internal.ManagerId) (internal.Product, error)
+	Get(ctx context.Context, productID internal.ProductID) (internal.Product, error)
+	Create(ctx context.Context, productID internal.ProductID, name string, managerID internal.ManagerID) (internal.Product, error)
 }
 
 type Server struct {

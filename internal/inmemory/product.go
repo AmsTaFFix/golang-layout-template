@@ -6,14 +6,14 @@ import (
 )
 
 type ProductStorage struct {
-	data map[internal.ProductId]internal.Product
+	data map[internal.ProductID]internal.Product
 }
 
 func NewProductStorage() *ProductStorage {
-	return &ProductStorage{data: map[internal.ProductId]internal.Product{}}
+	return &ProductStorage{data: map[internal.ProductID]internal.Product{}}
 }
 
-func (p *ProductStorage) Get(ctx context.Context, productId internal.ProductId) (internal.Product, error) {
+func (p *ProductStorage) Get(ctx context.Context, productID internal.ProductID) (internal.Product, error) {
 	//TODO implement me
 	panic("implement me")
 }

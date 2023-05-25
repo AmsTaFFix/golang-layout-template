@@ -6,14 +6,14 @@ import (
 )
 
 type UserStorage struct {
-	data map[internal.UserId]internal.User
+	data map[internal.UserID]internal.User
 }
 
 func NewUserStorage() *UserStorage {
-	return &UserStorage{data: map[internal.UserId]internal.User{}}
+	return &UserStorage{data: map[internal.UserID]internal.User{}}
 }
 
-func (u *UserStorage) Get(ctx context.Context, userId internal.UserId) (internal.User, error) {
+func (u *UserStorage) Get(ctx context.Context, userID internal.UserID) (internal.User, error) {
 	//TODO implement me
 	panic("implement me")
 }

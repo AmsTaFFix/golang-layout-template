@@ -36,33 +36,33 @@ func (m *MockUserRepository) EXPECT() *MockUserRepositoryMockRecorder {
 }
 
 // Create mocks base method.
-func (m *MockUserRepository) Create(ctx context.Context, userId internal.UserId, name string, managerId internal.ManagerId) (internal.User, error) {
+func (m *MockUserRepository) Create(ctx context.Context, userID internal.UserID, name string, managerID internal.ManagerID) (internal.User, error) {
 	m.ctrl.T.Helper()
-	ret := m.ctrl.Call(m, "Create", ctx, userId, name, managerId)
+	ret := m.ctrl.Call(m, "Create", ctx, userID, name, managerID)
 	ret0, _ := ret[0].(internal.User)
 	ret1, _ := ret[1].(error)
 	return ret0, ret1
 }
 
 // Create indicates an expected call of Create.
-func (mr *MockUserRepositoryMockRecorder) Create(ctx, userId, name, managerId interface{}) *gomock.Call {
+func (mr *MockUserRepositoryMockRecorder) Create(ctx, userID, name, managerID interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Create", reflect.TypeOf((*MockUserRepository)(nil).Create), ctx, userId, name, managerId)
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Create", reflect.TypeOf((*MockUserRepository)(nil).Create), ctx, userID, name, managerID)
 }
 
 // Get mocks base method.
-func (m *MockUserRepository) Get(ctx context.Context, userId internal.UserId) (internal.User, error) {
+func (m *MockUserRepository) Get(ctx context.Context, userID internal.UserID) (internal.User, error) {
 	m.ctrl.T.Helper()
-	ret := m.ctrl.Call(m, "Get", ctx, userId)
+	ret := m.ctrl.Call(m, "Get", ctx, userID)
 	ret0, _ := ret[0].(internal.User)
 	ret1, _ := ret[1].(error)
 	return ret0, ret1
 }
 
 // Get indicates an expected call of Get.
-func (mr *MockUserRepositoryMockRecorder) Get(ctx, userId interface{}) *gomock.Call {
+func (mr *MockUserRepositoryMockRecorder) Get(ctx, userID interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Get", reflect.TypeOf((*MockUserRepository)(nil).Get), ctx, userId)
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Get", reflect.TypeOf((*MockUserRepository)(nil).Get), ctx, userID)
 }
 
 // MockProductRepository is a mock of ProductRepository interface.
@@ -89,31 +89,31 @@ func (m *MockProductRepository) EXPECT() *MockProductRepositoryMockRecorder {
 }
 
 // Create mocks base method.
-func (m *MockProductRepository) Create(ctx context.Context, productId internal.ProductId, name string, managerId internal.ManagerId) (internal.Product, error) {
+func (m *MockProductRepository) Create(ctx context.Context, productID internal.ProductID, name string, managerID internal.ManagerID) (internal.Product, error) {
 	m.ctrl.T.Helper()
-	ret := m.ctrl.Call(m, "Create", ctx, productId, name, managerId)
+	ret := m.ctrl.Call(m, "Create", ctx, productID, name, managerID)
 	ret0, _ := ret[0].(internal.Product)
 	ret1, _ := ret[1].(error)
 	return ret0, ret1
 }
 
 // Create indicates an expected call of Create.
-func (mr *MockProductRepositoryMockRecorder) Create(ctx, productId, name, managerId interface{}) *gomock.Call {
+func (mr *MockProductRepositoryMockRecorder) Create(ctx, productID, name, managerID interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Create", reflect.TypeOf((*MockProductRepository)(nil).Create), ctx, productId, name, managerId)
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Create", reflect.TypeOf((*MockProductRepository)(nil).Create), ctx, productID, name, managerID)
 }
 
 // Get mocks base method.
-func (m *MockProductRepository) Get(ctx context.Context, productId internal.ProductId) (internal.Product, error) {
+func (m *MockProductRepository) Get(ctx context.Context, productID internal.ProductID) (internal.Product, error) {
 	m.ctrl.T.Helper()
-	ret := m.ctrl.Call(m, "Get", ctx, productId)
+	ret := m.ctrl.Call(m, "Get", ctx, productID)
 	ret0, _ := ret[0].(internal.Product)
 	ret1, _ := ret[1].(error)
 	return ret0, ret1
 }
 
 // Get indicates an expected call of Get.
-func (mr *MockProductRepositoryMockRecorder) Get(ctx, productId interface{}) *gomock.Call {
+func (mr *MockProductRepositoryMockRecorder) Get(ctx, productID interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Get", reflect.TypeOf((*MockProductRepository)(nil).Get), ctx, productId)
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Get", reflect.TypeOf((*MockProductRepository)(nil).Get), ctx, productID)
 }

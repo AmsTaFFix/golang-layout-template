@@ -7,13 +7,13 @@ import (
 	"fmt"
 )
 
-type ProductId string
+type ProductID string
 type Product struct {
-	Id   ProductId
+	ID   ProductID
 	Name string
 }
 type ProductStorage interface {
-	Get(ctx context.Context, productId ProductId) (Product, error)
+	Get(ctx context.Context, productID ProductID) (Product, error)
 	Set(ctx context.Context, product Product) error
 }
 
@@ -25,26 +25,25 @@ func NewProductRepository(storage ProductStorage) *ProductRepository {
 	return &ProductRepository{storage: storage}
 }
 
-func (pr *ProductRepository) Get(ctx context.Context, productId ProductId) (Product, error) {
+func (pr *ProductRepository) Get(ctx context.Context, productID ProductID) (Product, error) {
 	// add some rules, additional business logic, etc.
-	product, err := pr.storage.Get(ctx, productId)
+	product, err := pr.storage.Get(ctx, productID)
 	if err != nil {
-		return Product{}, fmt.Errorf("can't get product from storage with id '%s': %w", productId, err)
+		return Product{}, fmt.Errorf("can't get product from storage with id '%s': %w", productID, err)
 	}
 
 	return product, nil
 }
 
-func (pr *ProductRepository) Create(ctx context.Context, productId ProductId, name string, managerId ManagerId) (Product, error) {
+func (pr *ProductRepository) Create(ctx context.Context, productID ProductID, name string, managerID ManagerID) (Product, error) {
 	// add some rules, additional business logic, etc.
-	_ = managerId // add some audit?
+	_ = managerID // add some audit?
 
-	product := Product{Id: productId, Name: name}
+	product := Product{ID: productID, Name: name}
 	err := pr.storage.Set(ctx, product)
 	if err != nil {
 		return Product{}, fmt.Errorf("can't create product in storage")
 	}
 
 	return product, nil
-
 }

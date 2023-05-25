@@ -36,18 +36,18 @@ func (m *MockProductStorage) EXPECT() *MockProductStorageMockRecorder {
 }
 
 // Get mocks base method.
-func (m *MockProductStorage) Get(ctx context.Context, productId internal.ProductId) (internal.Product, error) {
+func (m *MockProductStorage) Get(ctx context.Context, productID internal.ProductID) (internal.Product, error) {
 	m.ctrl.T.Helper()
-	ret := m.ctrl.Call(m, "Get", ctx, productId)
+	ret := m.ctrl.Call(m, "Get", ctx, productID)
 	ret0, _ := ret[0].(internal.Product)
 	ret1, _ := ret[1].(error)
 	return ret0, ret1
 }
 
 // Get indicates an expected call of Get.
-func (mr *MockProductStorageMockRecorder) Get(ctx, productId interface{}) *gomock.Call {
+func (mr *MockProductStorageMockRecorder) Get(ctx, productID interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Get", reflect.TypeOf((*MockProductStorage)(nil).Get), ctx, productId)
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Get", reflect.TypeOf((*MockProductStorage)(nil).Get), ctx, productID)
 }
 
 // Set mocks base method.

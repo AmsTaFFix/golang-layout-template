@@ -14,7 +14,7 @@ func NewUserStorage(pgPool *pgxpool.Pool) *UserStorage {
 	return &UserStorage{pgPool: pgPool}
 }
 
-func (u *UserStorage) Get(ctx context.Context, userId internal.UserId) (internal.User, error) {
+func (u *UserStorage) Get(ctx context.Context, userID internal.UserID) (internal.User, error) {
 	//TODO implement me
 	panic("implement me")
 }

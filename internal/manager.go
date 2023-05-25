@@ -1,3 +1,3 @@
 package internal
 
-type ManagerId string
+type ManagerID string

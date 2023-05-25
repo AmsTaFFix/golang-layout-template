@@ -14,7 +14,7 @@ func NewProductStorage(pgPool *pgxpool.Pool) *ProductStorage {
 	return &ProductStorage{pgPool: pgPool}
 }
 
-func (p *ProductStorage) Get(ctx context.Context, productId internal.ProductId) (internal.Product, error) {
+func (p *ProductStorage) Get(ctx context.Context, productID internal.ProductID) (internal.Product, error) {
 	//TODO implement me
 	panic("implement me")
 }

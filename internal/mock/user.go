@@ -36,18 +36,18 @@ func (m *MockUserStorage) EXPECT() *MockUserStorageMockRecorder {
 }
 
 // Get mocks base method.
-func (m *MockUserStorage) Get(ctx context.Context, userId internal.UserId) (internal.User, error) {
+func (m *MockUserStorage) Get(ctx context.Context, userID internal.UserID) (internal.User, error) {
 	m.ctrl.T.Helper()
-	ret := m.ctrl.Call(m, "Get", ctx, userId)
+	ret := m.ctrl.Call(m, "Get", ctx, userID)
 	ret0, _ := ret[0].(internal.User)
 	ret1, _ := ret[1].(error)
 	return ret0, ret1
 }
 
 // Get indicates an expected call of Get.
-func (mr *MockUserStorageMockRecorder) Get(ctx, userId interface{}) *gomock.Call {
+func (mr *MockUserStorageMockRecorder) Get(ctx, userID interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Get", reflect.TypeOf((*MockUserStorage)(nil).Get), ctx, userId)
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Get", reflect.TypeOf((*MockUserStorage)(nil).Get), ctx, userID)
 }
 
 // Set mocks base method.
